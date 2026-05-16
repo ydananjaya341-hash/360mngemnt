@@ -1,62 +1,3 @@
-Gemini
-Decoupling SPA into Separate HTML Files
-Conversation with Gemini
-I need this indec.html separate as index.html, Aboutus.html, services.html, contact.html, rewave.html, accadvisor.html, growthgen.html, hirenowlanka.html. web inside anything dont change. only need separate this parts. use professional animations on the web.
-
-I have decoupled your Single Page Application (SPA) into eight distinct, fully functional HTML files as requested.
-
-I've updated all the navigation links to connect the pages seamlessly (e.g., index.html, Aboutus.html, etc.), preserved all the Tailwind CSS styling, and adapted the professional scroll animations (Intersection Observer) and JavaScript logic so they trigger correctly on page load for each separate file.
-
-Here are the separated files:
-Home Page
-May 16, 7:31 PM
-About Us Page
-May 16, 7:31 PM
-Services Page
-May 16, 7:31 PM
-Contact Us Page
-May 16, 7:31 PM
-Rewave Solutions Page
-May 16, 7:31 PM
-Accounting Advisor Page
-May 16, 7:31 PM
-Growth Gen Page
-May 16, 7:31 PM
-Hire Now Lanka Page
-May 16, 7:31 PM
-
-give me this pages html names
-
-Based on the code you selected, here are the HTML file names used for the different pages of the website:
-
-index.html (Home Page)
-
-Aboutus.html (About Us Page)
-
-services.html (Services Page)
-
-contact.html (Contact Us Page)
-
-rewave.html (Rewave Solutions Page)
-
-accadvisor.html (Accounting Advisor Page)
-
-growthgen.html (Growth Gen Page)
-
-hirenowlanka.html (Hire Now Lanka Page)
-
-These names are linked throughout the navigation menus and footer sections to connect the separate pages together.
-
-
-
-
-
-Gemini is AI and can make mistakes.
-
-Hire Now Lanka Page
-
-
-9293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,4 +8,125 @@ Hire Now Lanka Page
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { navy: '#0a192f', gold: '#d4af37', teal: '#0d9488', lightbg: '#f8fafc' },
+                    fontFamily: { heading: ['Poppins', 'sans-serif'], body: ['Inter', 'sans-serif'] },
+                    boxShadow: { 'soft': '0 10px 40px -10px rgba(0,0,0,0.08)' }
+                }
+            }
+        }
+    </script>
 
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="h-14 w-14 bg-white rounded-full flex items-center justify-center border-2 border-gold overflow-hidden shadow-sm">
+                        <img src="https://i.ibb.co/0p8y700k/Picsart-26-05-15-17-27-24-648.jpg" alt="360 Management Logo" class="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-300" style="mix-blend-mode: multiply;">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-bold text-xl text-navy leading-tight group-hover:text-teal transition-colors">360 Management</span>
+                        <span class="text-xs text-gold font-semibold tracking-wider">Solution Beyond Boundaries</span>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link font-medium text-gray-600 hover:text-navy transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Home</a>
+                    <a href="Aboutus.html" class="nav-link font-medium text-gray-600 hover:text-navy transition-colors pb-1 border-b-2 border-transparent hover:border-gold">About Us</a>
+                    <a href="services.html" class="nav-link font-medium text-gray-600 hover:text-navy transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Services</a>
+                    <a href="contact.html" class="px-6 py-2.5 bg-navy text-white rounded-full font-medium hover:bg-teal transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="flex-grow pt-[80px]">
+        <section class="bg-white pb-24">
+            <div class="py-24 text-center relative overflow-hidden bg-navy">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-navy/85"></div>
+                <div class="relative z-10 max-w-4xl mx-auto px-4">
+                    <div class="w-20 h-20 bg-gold text-navy rounded-2xl flex items-center justify-center text-4xl mx-auto mb-6 shadow-lg transform hover:scale-105 transition-transform"><i class="fas fa-users-cog"></i></div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Hire Now Lanka</h1>
+                    <p class="text-xl text-teal font-medium tracking-wide">Building Workforces & Managing Facilities</p>
+                </div>
+            </div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-teal">
+                    <a href="services.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-navy font-bold mb-8 transition-colors"><i class="fas fa-arrow-left"></i> Back to Services</a>
+                    
+                    <h2 class="text-2xl font-bold text-navy mb-4">About the Brand</h2>
+                    <p class="text-gray-600 mb-10 leading-relaxed text-lg">
+                        A reliable operational foundation requires exceptional people and well-managed environments. Hire Now Lanka solves the critical challenge of human capital and physical infrastructure, allowing you to focus purely on core business growth.
+                    </p>
+
+                    <h2 class="text-2xl font-bold text-navy mb-6">Key Services</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                        <div class="p-6 bg-lightbg rounded-xl border border-gray-100 flex gap-4 hover:shadow-md transition-shadow">
+                            <i class="fas fa-building text-gold text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-navy mb-1">Facility Management</h4>
+                                <p class="text-sm text-gray-600">Comprehensive maintenance, security, and administration of corporate spaces.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-lightbg rounded-xl border border-gray-100 flex gap-4 hover:shadow-md transition-shadow">
+                            <i class="fas fa-user-tie text-gold text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-navy mb-1">Manpower Recruitment</h4>
+                                <p class="text-sm text-gray-600">Sourcing, vetting, and placing top-tier talent across various organizational levels.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-lightbg rounded-xl border border-gray-100 flex gap-4 hover:shadow-md transition-shadow">
+                            <i class="fas fa-users text-gold text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-navy mb-1">Labor Supply Services</h4>
+                                <p class="text-sm text-gray-600">Reliable blue-collar and contract labor provision for industrial requirements.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-lightbg rounded-xl border border-gray-100 flex gap-4 hover:shadow-md transition-shadow">
+                            <i class="fas fa-network-wired text-gold text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-navy mb-1">Workforce Scalability</h4>
+                                <p class="text-sm text-gray-600">Flexible HR solutions that expand or contract based on seasonal project demands.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="contact.html" class="inline-block px-8 py-4 bg-navy text-white font-bold rounded-full hover:bg-gold hover:text-navy transition-all shadow-md">Consult with Hire Now Lanka</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy pt-16 pb-8 border-t-[6px] border-gold mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; <span id="currentYear"></span> Web design & development by Growth Gen | 360 Management (Pvt) Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
