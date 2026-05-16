@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rewave Solutions | 360 Management</title>
+    <title>360 Management (Pvt) Ltd | Home</title>
+    <meta name="description" content="A premier, multi-disciplinary corporate solutions provider offering a complete 360-degree ecosystem of services.">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,6 +28,7 @@
         }
     </script>
 
+    <!-- Custom CSS -->
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
@@ -31,26 +37,33 @@
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
-        
-        @media (min-width: 768px) {
-            .workflow-line::after {
-                content: '';
-                position: absolute;
-                top: 30px; left: 50%; width: 100%; height: 2px;
-                background-image: linear-gradient(to right, #0d9488 50%, transparent 50%);
-                background-size: 15px 2px;
-                z-index: 0;
-            }
-            .workflow-item:last-child .workflow-line::after { display: none; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        .hero-bg {
+            background-image: linear-gradient(to right, rgba(10, 25, 47, 0.95), rgba(10, 25, 47, 0.75)), url('https://i.ibb.co/wFdPPrWx/IMG-20260423-WA0038.jpg');
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
+        .header-bg {
+            background-image: linear-gradient(rgba(10, 25, 47, 0.9), rgba(13, 148, 136, 0.8)), url('https://i.ibb.co/wFdPPrWx/IMG-20260423-WA0038.jpg');
+            background-size: cover; background-position: center;
+        }
+
+        #notification { transform: translateY(150%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        #notification.show { transform: translateY(0); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
 
+    <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white shadow-md py-3">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
@@ -88,191 +101,158 @@
     </nav>
 
     <main id="main-content" class="flex-grow pt-[80px]">
-        <section class="bg-lightbg pb-24">
+        <section class="page-view">
             <!-- Hero -->
-            <div class="py-28 text-center relative overflow-hidden bg-navy">
-                <div class="absolute inset-0 bg-[url('https://i.ibb.co/SwGm6sS8/1776926937842.png')] bg-cover bg-center"></div>
-                <div class="absolute inset-0 bg-navy/85"></div>
-                <div class="relative z-10 max-w-4xl mx-auto px-4 reveal">
-                    <div class="w-28 h-28 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(13,148,136,0.6)] transform hover:scale-110 transition-transform overflow-hidden p-2">
-                        <img src="https://i.ibb.co/JjxKKyrq/1778053275575.png" alt="Rewave Solutions Logo" class="w-full h-full object-contain">
+            <div class="hero-bg min-h-[90vh] flex items-center relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20 text-center md:text-left">
+                    <div class="max-w-3xl">
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-teal/20 text-teal border border-teal/30 text-sm font-bold tracking-widest mb-6 animate-[fadeIn_1s_ease-out]">INTEGRATED CORPORATE SOLUTIONS</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-[fadeIn_1s_ease-out_200ms_both]">
+                            360 Management <br/>
+                            <span class="text-gold">Solution Beyond Boundaries</span>
+                        </h1>
+                        <p class="mt-4 text-lg md:text-xl text-gray-300 mb-10 animate-[fadeIn_1s_ease-out_400ms_both] leading-relaxed">
+                            A premier, multi-disciplinary corporate solutions provider offering a complete 360-degree ecosystem of services – digital marketing, financial strategy, technology infrastructure, and human capital management.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 animate-[fadeIn_1s_ease-out_600ms_both] justify-center md:justify-start">
+                            <a href="services.html" class="px-8 py-4 bg-gold text-navy font-bold rounded-full hover:bg-yellow-500 transition-all shadow-glow hover:-translate-y-1 text-center flex items-center justify-center gap-2">Our Services <i class="fas fa-arrow-right"></i></a>
+                            <a href="contact.html" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-navy transition-all text-center">Get in Touch</a>
+                        </div>
                     </div>
-                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-4 tracking-tight">REWAVE <span class="font-light">SOLUTIONS</span></h1>
-                    <p class="text-xl text-teal uppercase font-bold tracking-[0.2em] mb-2">Profile</p>
-                    <p class="text-lg text-gray-300">Creative Marketing Agency</p>
                 </div>
             </div>
 
-            <!-- About Us Block -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
-                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-t-4 border-teal mb-16">
-                    <a href="services.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-navy font-bold mb-8 transition-colors"><i class="fas fa-arrow-left"></i> Back to Services</a>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <!-- Stats Banner -->
+            <div class="relative -mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-100">
                         <div>
-                            <h2 class="text-3xl font-bold text-navy mb-6 flex items-center gap-3"><i class="fas fa-info-circle text-teal"></i> About Us</h2>
-                            <p class="text-gray-600 mb-6 leading-relaxed text-lg">
-                                <strong class="text-navy">Rewave Solutions</strong>, is a forward-thinking digital marketing agency committed to elevating businesses through innovative online strategies. We specialize in managing social platforms, creating personalized digital marketing plans, and producing engaging content that drives results. Our services also include crafting unique content strategies and delivering high-quality digital assets that align with your brand's goals.
-                            </p>
-                            <p class="text-gray-600 leading-relaxed text-lg">
-                                We are always updated with the newest marketing tools and industry trends, ensuring that your brand stays relevant and resonates with your target audience. With a focus on creative branding and impactful design, we help businesses build strong, lasting brand identities.
-                            </p>
+                            <div class="text-4xl font-bold text-teal mb-2"><span class="counter" data-target="4">0</span></div>
+                            <div class="text-sm font-bold text-gray-500 uppercase tracking-wide">Specialised Brands</div>
                         </div>
-                        
-                        <div class="space-y-4">
-                            <div class="bg-navy p-6 rounded-xl text-white transform hover:-translate-x-2 transition-transform shadow-md">
-                                <h4 class="font-bold text-gold mb-2 text-sm uppercase tracking-wider">Who We Are</h4>
-                                <p class="text-sm text-gray-300">Rewave Solutions, established in 2025, is a digital marketing agency dedicated to growing businesses through innovative online strategies.</p>
-                            </div>
-                            <div class="bg-teal p-6 rounded-xl text-white transform hover:-translate-x-2 transition-transform shadow-md">
-                                <h4 class="font-bold text-navy mb-2 text-sm uppercase tracking-wider">What We Do</h4>
-                                <p class="text-sm text-teal-50">We manage social platforms, create tailored marketing plans, and produce engaging content that aligns with your brand's goals.</p>
-                            </div>
-                            <div class="bg-white border-2 border-navy p-6 rounded-xl text-navy transform hover:-translate-x-2 transition-transform shadow-md">
-                                <h4 class="font-bold text-teal mb-2 text-sm uppercase tracking-wider">What You Have To Do</h4>
-                                <p class="text-sm font-medium">Simply share your goals and vision with us, and we'll create effective strategies to help your brand succeed.</p>
-                            </div>
+                        <div>
+                            <div class="text-4xl font-bold text-navy mb-2"><span class="counter" data-target="50">0</span>+</div>
+                            <div class="text-sm font-bold text-gray-500 uppercase tracking-wide">Happy Clients</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-teal mb-2"><span class="counter" data-target="10">0</span>+</div>
+                            <div class="text-sm font-bold text-gray-500 uppercase tracking-wide">Years Experience</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-bold text-navy mb-2"><span class="counter" data-target="100">0</span>+</div>
+                            <div class="text-sm font-bold text-gray-500 uppercase tracking-wide">Projects Delivered</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Vision & Mission -->
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 reveal">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-navy uppercase tracking-widest inline-block border-b-2 border-teal pb-2">Vision & Mission</h2>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden shadow-xl">
-                    <div class="bg-navy p-12 text-white">
-                        <h3 class="text-2xl font-bold mb-6 tracking-wide">VISION</h3>
-                        <p class="text-lg text-gray-300 leading-relaxed">To empower businesses with innovative digital marketing strategies for lasting success.</p>
-                    </div>
-                    <div class="bg-[#00adef] p-12 text-white">
-                        <h3 class="text-2xl font-bold mb-6 tracking-wide">MISSION</h3>
-                        <p class="text-lg text-white leading-relaxed">We create personalized solutions and engaging content that drive growth and build strong brand identities.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-white p-8 rounded-b-2xl shadow-md text-center border-t border-gray-100">
-                    <p class="text-lg md:text-xl font-bold text-navy uppercase tracking-wide">
-                        "Strategy Sparks Creativity, <br/>
-                        <span class="text-teal">Creativity Fuels Engagement,</span> <br/>
-                        Engagement Drives Success"
-                    </p>
-                </div>
-            </div>
-
-            <!-- Our Services (Chess Theme) -->
-            <div class="py-20 bg-white border-y border-gray-200">
+            <!-- Services Preview -->
+            <div class="py-24 bg-lightbg">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-16 reveal">
-                        <div class="text-5xl text-navy mb-4"><i class="fas fa-chess-knight"></i></div>
-                        <h2 class="text-3xl md:text-4xl font-black text-navy uppercase tracking-wide">We Build <span class="text-teal">Brands</span> <br/>Through Innovation.</h2>
-                        <div class="w-24 h-1 bg-gold mx-auto mt-6"></div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Our Ecosystem of Brands</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto text-lg">Four specialized divisions working in harmony to provide end-to-end solutions for your business growth.</p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal delay-100">
-                        <div class="bg-navy text-white text-center p-6 rounded-lg shadow-lg hover:bg-teal transition-colors cursor-pointer font-bold text-lg"><i class="fas fa-hashtag block text-2xl mb-2 text-gold"></i> Social Media Marketing</div>
-                        <div class="bg-navy text-white text-center p-6 rounded-lg shadow-lg hover:bg-teal transition-colors cursor-pointer font-bold text-lg"><i class="fab fa-google block text-2xl mb-2 text-gold"></i> Google Advertising</div>
-                        <div class="bg-navy text-white text-center p-6 rounded-lg shadow-lg hover:bg-teal transition-colors cursor-pointer font-bold text-lg"><i class="fas fa-search block text-2xl mb-2 text-gold"></i> Keyword Research</div>
-                        <div class="bg-navy text-white text-center p-6 rounded-lg shadow-lg hover:bg-teal transition-colors cursor-pointer font-bold text-lg"><i class="fas fa-pen-nib block text-2xl mb-2 text-gold"></i> Strategic Content Creation</div>
-                        <div class="bg-navy text-white text-center p-6 rounded-lg shadow-lg hover:bg-teal transition-colors cursor-pointer font-bold text-lg"><i class="fas fa-camera block text-2xl mb-2 text-gold"></i> Corporate Photo Shoots</div>
-                        <div class="bg-navy text-white text-center p-6 rounded-lg shadow-lg hover:bg-teal transition-colors cursor-pointer font-bold text-lg"><i class="fas fa-paint-brush block text-2xl mb-2 text-gold"></i> Graphic Design Services</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Workflow Infographic -->
-            <div class="py-24 bg-lightbg overflow-hidden">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="text-center mb-20 reveal">
-                        <h2 class="text-3xl font-bold text-navy uppercase tracking-widest inline-block border-b-2 border-teal pb-2">Our Workflow for SMM</h2>
-                    </div>
-
-                    <div class="relative flex flex-wrap justify-center gap-y-12 md:gap-y-20 reveal delay-200">
-                        
-                        <div class="hidden md:block absolute top-[40px] left-[5%] right-[5%] h-1 bg-gray-300 -z-10"></div>
-                        <div class="hidden md:block absolute top-[200px] left-[5%] right-[5%] h-1 bg-gray-300 -z-10"></div>
-                        
-                        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center workflow-item z-10 px-4">
-                            <div class="w-20 h-20 rounded-full bg-white border-4 border-navy text-navy flex items-center justify-center text-3xl shadow-lg mb-4 transform hover:scale-110 transition-transform"><i class="fas fa-bullseye"></i></div>
-                            <h4 class="font-bold text-navy text-center mb-1">Establish Clear Goals</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-white rounded-xl p-8 shadow-soft border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal group">
+                            <div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mb-6 text-teal text-3xl group-hover:bg-teal group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy mb-3">Rewave Solutions</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">Driving Digital Growth & Brand Authority through forward-thinking digital marketing and content strategies.</p>
+                            <a href="rewave.html" class="text-teal font-bold hover:text-navy transition-colors inline-flex items-center gap-2 group-hover:gap-3">Learn More <i class="fas fa-arrow-right"></i></a>
                         </div>
-                        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center workflow-item z-10 px-4">
-                            <div class="w-20 h-20 rounded-full bg-white border-4 border-teal text-teal flex items-center justify-center text-3xl shadow-lg mb-4 transform hover:scale-110 transition-transform"><i class="fas fa-users"></i></div>
-                            <h4 class="font-bold text-navy text-center mb-1">Identify Target Audience</h4>
+                        <div class="bg-white rounded-xl p-8 shadow-soft border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal delay-100 group">
+                            <div class="w-16 h-16 bg-gold/10 rounded-2xl flex items-center justify-center mb-6 text-gold text-3xl group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy mb-3">Accounting Advisor</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">Precision in Finance & Corporate Strategy. The strategic financial backbone for your business compliance.</p>
+                            <a href="accadvisor.html" class="text-gold font-bold hover:text-navy transition-colors inline-flex items-center gap-2 group-hover:gap-3">Learn More <i class="fas fa-arrow-right"></i></a>
                         </div>
-                        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center workflow-item z-10 px-4">
-                            <div class="w-20 h-20 rounded-full bg-white border-4 border-gold text-gold flex items-center justify-center text-3xl shadow-lg mb-4 transform hover:scale-110 transition-transform"><i class="fas fa-lightbulb"></i></div>
-                            <h4 class="font-bold text-navy text-center mb-1">Idea Generation</h4>
+                        <div class="bg-white rounded-xl p-8 shadow-soft border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal delay-200 group">
+                            <div class="w-16 h-16 bg-navy/10 rounded-2xl flex items-center justify-center mb-6 text-navy text-3xl group-hover:bg-navy group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy mb-3">Growth Gen</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">Empowering Operations through Technology by bridging the gap between workflows and digital execution.</p>
+                            <a href="growthgen.html" class="text-navy font-bold hover:text-teal transition-colors inline-flex items-center gap-2 group-hover:gap-3">Learn More <i class="fas fa-arrow-right"></i></a>
                         </div>
-                        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center workflow-item z-10 px-4">
-                            <div class="w-20 h-20 rounded-full bg-white border-4 border-navy text-navy flex items-center justify-center text-3xl shadow-lg mb-4 transform hover:scale-110 transition-transform"><i class="fas fa-file-alt"></i></div>
-                            <h4 class="font-bold text-navy text-center mb-1">Develop Contents</h4>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center workflow-item z-10 px-4 md:mt-20">
-                            <div class="w-20 h-20 rounded-full bg-teal border-4 border-white text-white flex items-center justify-center text-3xl shadow-lg mb-4 transform hover:scale-110 transition-transform"><i class="fas fa-stamp"></i></div>
-                            <h4 class="font-bold text-navy text-center mb-1">Approval</h4>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center workflow-item z-10 px-4 md:mt-20">
-                            <div class="w-20 h-20 rounded-full bg-white border-4 border-gold text-gold flex items-center justify-center text-3xl shadow-lg mb-4 transform hover:scale-110 transition-transform"><i class="fas fa-mobile-alt"></i></div>
-                            <h4 class="font-bold text-navy text-center mb-1">Choose Platforms</h4>
-                            <p class="text-xs text-gray-500 text-center">(Run Campaigns, Post or Boost)</p>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center workflow-item z-10 px-4 md:mt-20">
-                            <div class="w-20 h-20 rounded-full bg-white border-4 border-navy text-navy flex items-center justify-center text-3xl shadow-lg mb-4 transform hover:scale-110 transition-transform"><i class="fas fa-ad"></i></div>
-                            <h4 class="font-bold text-navy text-center mb-1">Run Targeted Ads</h4>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/4 flex flex-col items-center workflow-item z-10 px-4 md:mt-20">
-                            <div class="w-20 h-20 rounded-full bg-white border-4 border-teal text-teal flex items-center justify-center text-3xl shadow-lg mb-4 transform hover:scale-110 transition-transform"><i class="fas fa-chart-line"></i></div>
-                            <h4 class="font-bold text-navy text-center mb-1">Reporting & Analysis</h4>
+                        <div class="bg-white rounded-xl p-8 shadow-soft border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal delay-300 group">
+                            <div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mb-6 text-teal text-3xl group-hover:bg-teal group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-navy mb-3">Hire Now Lanka</h3>
+                            <p class="text-gray-600 text-sm mb-6 line-clamp-3">Building Workforces & Managing Facilities. Comprehensive solutions for a reliable operational foundation.</p>
+                            <a href="hirenowlanka.html" class="text-teal font-bold hover:text-navy transition-colors inline-flex items-center gap-2 group-hover:gap-3">Learn More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Portfolio Highlights (Creatives) -->
-            <div class="py-24 bg-white">
+            <!-- Collaborators -->
+            <div class="py-20 bg-white border-y border-gray-100 overflow-hidden">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    
-                    <div class="mb-16 reveal">
-                        <h2 class="text-2xl font-bold text-navy border-l-4 border-teal pl-4 mb-6 uppercase">Social Media & Conceptual Creatives</h2>
-                        
-                        <!-- INSTAGRAM EMBEDS -->
-                        <div id="insta-gallery" class="flex overflow-x-auto gap-6 pb-8 snap-x scrollbar-hide items-center transition-all duration-500">
-                            <!-- Due to length of embedded strings, kept exactly as in source -->
-                            <div class="flex-shrink-0 w-[330px] md:w-[350px] snap-center">
-                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQQh1dFjxd4/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DQQh1dFjxd4/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DQQh1dFjxd4/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Rewave Solutions (@rewavesolutions)</a></p></div></blockquote>
-                            </div>
-                            <div class="flex-shrink-0 w-[330px] md:w-[350px] snap-center">
-                                <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQQ2dmrCAPp/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DQQ2dmrCAPp/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DQQ2dmrCAPp/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Rewave Solutions (@rewavesolutions)</a></p></div></blockquote>
-                            </div>
-                        </div>
-                        <script async src="//www.instagram.com/embed.js"></script>
+                    <h3 class="text-center text-xl font-bold text-gray-400 uppercase tracking-widest mb-10 reveal">Trusted by Industry Leaders</h3>
+                    <div class="flex overflow-x-auto gap-16 pb-4 scrollbar-hide items-center justify-start md:justify-center reveal opacity-70">
+                        <div class="flex-shrink-0 flex items-center gap-3 text-2xl font-bold text-gray-400 hover:text-navy transition-colors"><i class="fas fa-building text-4xl"></i> CorpTech</div>
+                        <div class="flex-shrink-0 flex items-center gap-3 text-2xl font-bold text-gray-400 hover:text-navy transition-colors"><i class="fas fa-globe text-4xl"></i> GlobalSys</div>
+                        <div class="flex-shrink-0 flex items-center gap-3 text-2xl font-bold text-gray-400 hover:text-navy transition-colors"><i class="fas fa-industry text-4xl"></i> ManuFab Inc</div>
+                        <div class="flex-shrink-0 flex items-center gap-3 text-2xl font-bold text-gray-400 hover:text-navy transition-colors"><i class="fas fa-landmark text-4xl"></i> BankTrust</div>
+                        <div class="flex-shrink-0 flex items-center gap-3 text-2xl font-bold text-gray-400 hover:text-navy transition-colors"><i class="fas fa-leaf text-4xl"></i> EcoVantage</div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="grid md:grid-cols-2 gap-12 items-center reveal delay-100 mb-16">
-                        <div>
-                            <h2 class="text-2xl font-bold text-navy border-l-4 border-gold pl-4 mb-6 uppercase">Logo Creations</h2>
-                            <div class="grid grid-cols-3 gap-4">
-                                <div class="bg-gray-50 border border-gray-200 aspect-square rounded-lg flex items-center justify-center p-2 shadow-sm"><span class="font-bold text-navy font-heading text-sm text-center">Glamora</span></div>
-                                <div class="bg-gray-50 border border-gray-200 aspect-square rounded-lg flex items-center justify-center p-2 shadow-sm"><span class="font-bold text-teal font-heading text-sm text-center">HNDM<br>Digihub</span></div>
-                                <div class="bg-gray-50 border border-gray-200 aspect-square rounded-lg flex items-center justify-center p-2 shadow-sm"><span class="font-bold text-red-500 font-heading text-sm text-center">Arvid</span></div>
-                                <div class="bg-gray-50 border border-gray-200 aspect-square rounded-lg flex items-center justify-center p-2 shadow-sm"><span class="font-bold text-pink-400 font-heading text-sm text-center">Heaven<br>Sweets</span></div>
-                                <div class="bg-gray-50 border border-gray-200 aspect-square rounded-lg flex items-center justify-center p-2 shadow-sm"><span class="font-bold text-yellow-700 font-heading text-sm text-center">Coffee<br>Cafe</span></div>
-                                <div class="bg-gray-50 border border-gray-200 aspect-square rounded-lg flex items-center justify-center p-2 shadow-sm"><span class="font-bold text-blue-600 font-heading text-sm text-center">Tech<br>Waves</span></div>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-navy rounded-2xl p-8 text-center text-white relative overflow-hidden shadow-2xl">
-                            <div class="absolute -right-4 -top-4 text-white/5 text-9xl"><i class="fas fa-video"></i></div>
-                            <h2 class="text-2xl font-bold text-gold mb-6 relative z-10 uppercase">Reels & Video Campaigns</h2>
-                            <p class="text-gray-300 mb-6 relative z-10">We engineer viral short-form content optimized for Instagram and TikTok algorithms.</p>
+            <!-- Why Choose Us -->
+            <div class="py-24 bg-lightbg">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div class="reveal">
+                            <h2 class="text-3xl md:text-4xl font-bold text-navy mb-6">Why Choose 360 Management?</h2>
+                            <p class="text-gray-600 mb-8 text-lg leading-relaxed">We don't just offer services; we partner with you to build a resilient, scalable ecosystem for your business. Our expertise lies in seamlessly connecting every operational dot.</p>
                             
-                            <div id="reels-gallery" class="flex overflow-x-auto gap-6 pb-4 snap-x scrollbar-hide relative z-10 items-center transition-all duration-500">
-                                <div class="flex-shrink-0 relative w-[267px] h-[476px] rounded-2xl border-[5px] border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.4)] overflow-hidden bg-black transform hover:scale-105 transition-transform duration-300 snap-center">
-                                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1701986137136756%2F&show_text=false&width=267&t=0&autoplay=1&mute=1" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" class="w-full h-full"></iframe>
+                            <div class="space-y-8">
+                                <div class="flex gap-5">
+                                    <div class="mt-1 w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold flex-shrink-0"><i class="fas fa-check"></i></div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-navy mb-1">Holistic Integration</h4>
+                                        <p class="text-gray-600 text-sm">One partner for marketing, finance, tech, and HR.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5">
+                                    <div class="mt-1 w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold flex-shrink-0"><i class="fas fa-check"></i></div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-navy mb-1">Industry Agnostic</h4>
+                                        <p class="text-gray-600 text-sm">Adaptable solutions customized across various market sectors.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5">
+                                    <div class="mt-1 w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold flex-shrink-0"><i class="fas fa-check"></i></div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-navy mb-1">Data-Driven Strategy</h4>
+                                        <p class="text-gray-600 text-sm">Decisions backed by thorough industrial research and analytics.</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-5">
+                                    <div class="mt-1 w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold flex-shrink-0"><i class="fas fa-check"></i></div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-navy mb-1">Future-Ready</h4>
+                                        <p class="text-gray-600 text-sm">Leveraging technology to future-proof your business operations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative reveal delay-200">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Team meeting" class="rounded-2xl shadow-2xl">
+                            <div class="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl hidden md:block border-l-4 border-teal">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-14 h-14 bg-teal rounded-full flex items-center justify-center text-white text-2xl"><i class="fas fa-award"></i></div>
+                                    <div>
+                                        <div class="font-bold text-navy text-2xl">100%</div>
+                                        <div class="text-sm text-gray-500 font-bold uppercase tracking-wider">Client Satisfaction</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -280,43 +260,19 @@
                 </div>
             </div>
 
-            <!-- Quote Section -->
-            <div class="py-20 bg-lightbg border-y border-gray-200">
-                <div class="max-w-4xl mx-auto px-4 text-center reveal">
-                    <i class="fas fa-chess-king text-4xl text-gold mb-6"></i>
-                    <h2 class="text-3xl md:text-5xl font-bold text-navy leading-tight mb-8 font-heading">
-                        <span class="text-teal text-6xl font-serif">"</span>Marketing is all about telling stories that people want to hear.<span class="text-teal text-6xl font-serif">"</span>
-                    </h2>
-                    <p class="text-xl text-gray-500 font-bold uppercase tracking-widest">- Guy Kawasaki -</p>
-                </div>
-            </div>
-            
-            <!-- Contact Specific to Rewave -->
-            <div class="bg-navy py-16 px-4">
-                <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 reveal">
-                    <div class="text-white">
-                        <h2 class="text-3xl font-bold mb-2">Ready to grow your brand?</h2>
-                        <p class="text-gray-400">Contact the Rewave Solutions team directly.</p>
-                        <div class="mt-6 space-y-2">
-                            <p class="flex items-center gap-3"><i class="fas fa-envelope text-teal"></i> rewaveinfo@gmail.com</p>
-                            <p class="flex items-center gap-3"><i class="fas fa-phone text-teal"></i> 076 637 67 56</p>
-                            <div class="flex gap-4 mt-4 pt-4 border-t border-white/10">
-                                <a href="https://www.facebook.com/profile.php?id=61571973361838" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-facebook text-xl"></i> Rewave Solutions</a>
-                                <a href="https://www.instagram.com/rewavesolutions/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-xl"></i> rewavesolutions</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl flex flex-col items-center shadow-[0_0_30px_rgba(13,148,136,0.3)] w-full md:w-auto">
-                        <div class="w-40 h-auto mb-2 flex items-center justify-center">
-                            <img src="https://i.ibb.co/JjxKKyrq/1778053275575.png" alt="Rewave Solutions Logo" class="w-full object-contain">
-                        </div>
-                        <a href="contact.html" class="mt-4 w-full px-6 py-3 bg-teal text-white text-center font-bold rounded-lg hover:bg-navy transition-colors">Get Started</a>
-                    </div>
+            <!-- CTA -->
+            <div class="bg-navy py-20 text-center px-4 relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[url('https://i.ibb.co/wFdPPrWx/IMG-20260423-WA0038.jpg')] bg-cover bg-center mix-blend-overlay"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 reveal">Ready to Transform Your Business?</h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto mb-10 text-lg reveal delay-100">Take the first step towards seamless operations, optimized finances, and explosive growth.</p>
+                    <a href="contact.html" class="inline-block px-8 py-4 bg-gold text-navy font-bold rounded-full hover:bg-yellow-500 transition-all shadow-glow hover:-translate-y-1 reveal delay-200">Schedule a Free Consultation</a>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-navy pt-16 pb-8 border-t-[6px] border-gold mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -371,6 +327,7 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/94789898498" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform z-50" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -379,10 +336,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('currentYear').textContent = new Date().getFullYear();
 
+            // Mobile menu toggle
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
             btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
+            // Navbar scroll effect
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 20) {
@@ -394,6 +353,7 @@
                 }
             });
 
+            // Set Active Links
             const currentPath = window.location.pathname.split('/').pop() || 'index.html';
             document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
                 const href = link.getAttribute('href');
@@ -406,50 +366,47 @@
                 }
             });
 
+            // Observer for animations
             let observer;
             function initObserver() {
                 if(observer) observer.disconnect();
                 const options = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
                 observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
-                        if (entry.isIntersecting) entry.target.classList.add('active');
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            if(entry.target.querySelector('.counter')) animateNumbers();
+                        }
                     });
                 }, options);
                 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
             }
             initObserver();
 
-            // Auto-Scroll Logic for Galleries
-            function setupAutoScroll(galleryId, scrollAmount, intervalTime) {
-                const gallery = document.getElementById(galleryId);
-                if (!gallery) return;
-                let autoScrollInterval;
-                function startAutoScroll() {
-                    clearInterval(autoScrollInterval);
-                    autoScrollInterval = setInterval(() => {
-                        const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
-                        if (gallery.scrollLeft >= maxScrollLeft - 10) {
-                            gallery.scrollTo({ left: 0, behavior: 'smooth' });
+            // Counter animation
+            let counted = false;
+            function animateNumbers() {
+                if(counted) return;
+                const counters = document.querySelectorAll('.counter');
+                if(counters.length === 0) return;
+                
+                counted = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; 
+                    const increment = target / (duration / 16);
+                    let current = 0;
+                    const update = () => {
+                        current += increment;
+                        if(current < target) {
+                            counter.innerText = Math.ceil(current);
+                            requestAnimationFrame(update);
                         } else {
-                            gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                            counter.innerText = target;
                         }
-                    }, intervalTime);
-                }
-                function stopAutoScroll() { clearInterval(autoScrollInterval); }
-
-                startAutoScroll();
-                gallery.addEventListener('mouseenter', stopAutoScroll);
-                gallery.addEventListener('mouseleave', startAutoScroll);
-                gallery.addEventListener('touchstart', stopAutoScroll, {passive: true});
-                gallery.addEventListener('touchend', startAutoScroll, {passive: true});
-            }
-
-            setupAutoScroll('insta-gallery', 360, 3500);
-            setupAutoScroll('reels-gallery', 290, 3500);
-
-            // IG Processing
-            if (window.instgrm && typeof window.instgrm.Embeds !== 'undefined') {
-                setTimeout(() => window.instgrm.Embeds.process(), 200);
+                    };
+                    update();
+                });
             }
         });
     </script>
